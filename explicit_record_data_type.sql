@@ -12,20 +12,13 @@ DECLARE
     );
 
     vrec rec ;--definging the vrec as record datat type
+
     e_id rika.emp.EMPNO%TYPE ;
 begin
-    e_id:=&EMPNO;
+    e_id:=&EMPNO ;
     select * into vrec
     from rika.emp where EMPNO=e_id;
     dbms_output.put_line('EMP NO IS ' || vrec.e_no);
-    dbms_output.put_line('EMP NAME IS ' || vrec.e_name);
-    dbms_output.put_line('JOB  IS ' || vrec.job_var);
-    dbms_output.put_line('MANAGER IS ' || vrec.mgr_var);
-    dbms_output.put_line('HIREDATE IS ' || vrec.h_date);
-    dbms_output.put_line('SAL IS ' || vrec.sal_var);
-    dbms_output.put_line('COMM ' || vrec.comm_v);
-    dbms_output.put_line('DEPTNO ' || vrec.dept_n);
-
 exception
     when no_data_found then
         dbms_output.put_line('employee is does not exist');
@@ -38,3 +31,4 @@ end;
 /
 
 select * from rika.emp where EMPNO=7900;
+select * from rika.emp where EMPNO=7788;
