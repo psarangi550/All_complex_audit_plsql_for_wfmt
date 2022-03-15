@@ -66,3 +66,21 @@ exception
         dbms_output.put_line('initialize you fool');
 end;
 /
+
+
+set serveroutput on
+set pagesize 100
+set linesize 100
+declare
+    type nest_tbl is TABLE OF number ;
+    v_var nest_tbl;/* initialized nested table colle ction variable but  0  element */
+    -- my_exp exception ;
+    -- pragma exception_init(my_exp, -06531);
+begin
+    dbms_output.put_line(' value of variable is  '||v_var.FIRST);/* this will return empty */
+
+exception
+    when collection_is_null then
+        dbms_output.put_line('initialize you fool');
+end;
+/
