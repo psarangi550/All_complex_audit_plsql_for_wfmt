@@ -13,7 +13,7 @@ set serveroutput on
 set linesize 100
 set pagesize 100
 create or replace trigger STOPTGR
-before update on new_emp
+before insert or update on new_emp
 for each row
 ENABLE
 declare
