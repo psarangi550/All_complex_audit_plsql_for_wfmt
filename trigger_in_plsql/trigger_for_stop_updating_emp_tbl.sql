@@ -23,10 +23,6 @@ begin
     if curr_time > time_up then
         raise_application_error(2000,'your time is up');
     end if ;
-
-exception 
-    when others then
-        dbms_output.put_line('Something went wrong');
 end;
 /
 
